@@ -1,0 +1,19 @@
+* To run test cases
+pytest -v -s test_login_ddt.py
+
+* To run parallel test cases
+pytest -v -s -n=2 test_login_ddt.py
+
+* To run on particular browser using command line
+pytest -v -s test_login_ddt.py --browser=chrome
+
+*To create HTMl Report
+pytest -v -s test_login.py --browser=chrome --html=/Users/ganeshachari/AutomationWork/UI/reports/report.html
+
+* If logs are not logging in the report
+pytest -v -s test_login.py --browser=chrome --html=/Users/ganeshachari/AutomationWork/UI/reports/report.html --capture=tee-sys
+
+* To run particular group of test cases(Ex:Sanity)
+pytest -v -s -m 'sanity' -n=3 --browser=chrome --html=/Users/ganeshachari/AutomationWork/UI/reports/report.html --capture=tee-sys
+
+
