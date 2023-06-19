@@ -1,0 +1,5 @@
+link_main_customers_xpath : "//div[@class='os-content']//ul[contains(@class,nav-sidebar)]//i[contains(@class,'user')]//following-sibling::p[contains(text(),'Customers')]"
+link_sub_customers_xpath : "//div[@class='os-content']//ul[contains(@class,nav-sidebar)]//a[contains(@href,'List')]//following-sibling::p[contains(text(),'Customers')]"
+text_search_email_xpath : "//input[@id='SearchEmail']"
+button_search_xpath : "//button[@id='search-customers']"
+text_search_result_email_xpath : "//table[@id='customers-grid']//tr[@class='odd']//td[2]"

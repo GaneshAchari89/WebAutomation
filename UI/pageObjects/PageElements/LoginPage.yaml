@@ -1,0 +1,4 @@
+textbox_username_xpath : //input[@type='email']
+textbox_password_xpath : //input[@type='password']
+button_login_xpath : //button[@type='submit' and text()='Log in']
+link_logout_xpath : //a[contains(text(),'Logout')]

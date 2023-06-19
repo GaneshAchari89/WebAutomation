@@ -15,6 +15,7 @@ class Test_0002_ddt_Login(CommonElements):
         self.logger.info("**************** Verifying Login Test ****************")
         self.driver = setUp
         self.driver.get(self.baseUrl)
+        self.driver.maximize_window()
         self.loginPage = LoginPage(self.driver)
 
         self.rows = excelUtil.getRowCount(self.path, 'Sheet1')

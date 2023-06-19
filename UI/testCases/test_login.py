@@ -30,6 +30,7 @@ class Test_0001_Login(CommonElements):
         self.logger.info("**************** Verifying Login Test ****************")
         self.driver = setUp
         self.driver.get(self.baseUrl)
+        self.driver.maximize_window()
         self.loginPage = LoginPage(self.driver)
         self.loginPage.setUserName(self.username)
         self.loginPage.setPassword(self.password)
