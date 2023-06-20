@@ -22,7 +22,7 @@ class Test_0001_Login(CommonElements):
             self.logger.info("**************** Home Page Title test case is passed ****************")
             self.driver.close()
         else:
-            self.take_and_save_screenshot()
+            self.save_screenshot()
             self.driver.close()
             self.logger.error("**************** Home Page Title test case is failed ****************")
             assert False
@@ -43,7 +43,7 @@ class Test_0001_Login(CommonElements):
             self.logger.info("**************** Login test case is passed ****************")
             self.driver.close()
         else:
-            self.take_and_save_screenshot()
+            self.save_screenshot()
             self.logger.error("**************** Login test case is failed ****************")
             self.driver.close()
             assert False
