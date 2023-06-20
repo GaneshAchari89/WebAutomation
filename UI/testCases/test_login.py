@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 from UI.pageObjects.CommonElements import CommonElements
@@ -20,7 +22,7 @@ class Test_0001_Login(CommonElements):
             self.logger.info("**************** Home Page Title test case is passed ****************")
             self.driver.close()
         else:
-            self.driver.save_screenshot(self.screen_shots_path + "test_homePageTitle.png")
+            self.take_and_save_screenshot()
             self.driver.close()
             self.logger.error("**************** Home Page Title test case is failed ****************")
             assert False
@@ -41,7 +43,7 @@ class Test_0001_Login(CommonElements):
             self.logger.info("**************** Login test case is passed ****************")
             self.driver.close()
         else:
-            self.driver.save_screenshot(self.screen_shots_path + "test_login.png")
+            self.take_and_save_screenshot()
             self.logger.error("**************** Login test case is failed ****************")
             self.driver.close()
             assert False

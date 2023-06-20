@@ -1,4 +1,4 @@
-import yaml
+import os
 
 from UI.utilities.customLogger import LogGenerator
 from UI.utilities.readProperties import ReadConfig
@@ -14,10 +14,10 @@ class CommonElements:
 
     screen_shots_path = "../screenshots/"
 
-    @staticmethod
-    def get_element(file_name):
-        with open('../pageObjects/PageElements/' + file_name + ".yaml") as file:
-            return yaml.load(file, Loader=yaml.SafeLoader)
+    def take_and_save_screenshot(self):
+        self.driver.save_screenshot(self.screen_shots_path + os.environ.get('PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0]+".png")
+
+
 
 
 

@@ -32,7 +32,7 @@ class Test_0002_Customers(CommonElements):
             self.logger.info("**************** Customer search test case is passed ****************")
             self.driver.close()
         else:
-            self.driver.save_screenshot(self.screen_shots_path + "test_customers_search.png")
+            self.take_and_save_screenshot()
             self.driver.close()
             self.logger.error("**************** Customer search Title test case is failed ****************")
             assert False
