@@ -1,23 +1,19 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
-from UI.pageObjects.CommonUtils import CommonUtils
+from UI.pageObjects.CommonOperations import CommonOperations
 
 
-class CustomersPage(CommonUtils):
+class CustomersPage(CommonOperations):
 
     def navigate_to_customers(self):
         self.driver.find_element(By.XPATH, self.element.get('link_main_customers_xpath')).click()
-        self.wait.until(ec.visibility_of_element_located((By.XPATH, self.element.get('link_sub_customers_xpath'))))
-        self.driver.find_element(By.XPATH, self.element.get('link_sub_customers_xpath')).click()
+        self.wait_and_click("link_sub_customers_xpath")
 
     def search_email(self, email):
-        self.wait.until(ec.visibility_of_element_located((By.XPATH, self.element.get('text_search_email_xpath'))))
-        self.driver.find_element(By.XPATH, self.element.get('text_search_email_xpath')).send_keys(email)
+        self.clear_send_keys("text_search_email_xpath",email)
 
     def click_search(self):
-        self.wait.until(ec.visibility_of_element_located((By.XPATH, self.element.get('button_search_xpath'))))
-        self.driver.find_element(By.XPATH, self.element.get('button_search_xpath')).click()
+        self.wait_and_click("button_search_xpath")
 
     def validate_search_result(self):
-        self.wait.until(ec.visibility_of_element_located((By.XPATH, self.element.get('text_search_result_email_xpath'))))
-        return self.driver.find_element(By.XPATH, self.element.get('text_search_result_email_xpath')).text
+        self.get_text("text_search_result_email_xpath")

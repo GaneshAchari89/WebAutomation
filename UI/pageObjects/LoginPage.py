@@ -1,24 +1,18 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
-from UI.pageObjects.CommonUtils import CommonUtils
+from UI.pageObjects.CommonOperations import CommonOperations
 
 
-class LoginPage(CommonUtils):
+class LoginPage(CommonOperations):
 
     def setUserName(self, username):
-        self.wait.until(ec.visibility_of_element_located((By.XPATH, self.element.get('textbox_username_xpath'))))
-        self.driver.find_element(By.XPATH, self.element.get('textbox_username_xpath')).clear()
-        self.driver.find_element(By.XPATH, self.element.get('textbox_username_xpath')).send_keys(username)
+        self.clear_send_keys("textbox_username_xpath",username)
 
     def setPassword(self, password):
-        self.wait.until(ec.visibility_of_element_located((By.XPATH, self.element.get('textbox_password_xpath'))))
-        self.driver.find_element(By.XPATH, self.element.get('textbox_password_xpath')).clear()
-        self.driver.find_element(By.XPATH, self.element.get('textbox_password_xpath')).send_keys(password)
+        self.clear_send_keys("textbox_password_xpath",password)
 
     def clickLogin(self):
-        self.wait.until(ec.visibility_of_element_located((By.XPATH, self.element.get('button_login_xpath'))))
-        self.driver.find_element(By.XPATH, self.element.get('button_login_xpath')).click()
+        self.wait_and_click("button_login_xpath")
 
     def clickLogout(self):
-        self.wait.until(ec.visibility_of_element_located((By.XPATH, self.element.get('link_logout_xpath'))))
-        self.driver.find_element(By.XPATH, self.element.get('link_logout_xpath')).click()
+        self.wait_and_click("link_logout_xpath")
