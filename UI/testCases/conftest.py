@@ -6,26 +6,33 @@ from webdriver_manager.microsoft import IEDriverManager
 
 
 @pytest.fixture
-def setUp(browser):
-    if browser == 'chrome':
+def setUp(browser, env):
+    if browser.lower() == 'chrome':
         driver = webdriver.Chrome(ChromeDriverManager().install())
         print("Launching Chrome Browser.........")
-    elif browser == 'firefox':
+    elif browser.lower() == 'firefox':
         driver = webdriver.Firefox(GeckoDriverManager().install())
         print("Launching firefox Browser.........")
     else:
         driver = webdriver.Ie(IEDriverManager().install())
         print("Launching IE Browser.........")
-    return driver
+    print("Running test cases on {} environment".format(env.title()))
+    return driver, env.lower()
 
 
 def pytest_addoption(parser):  # This will get the value from CLI/hooks
     parser.addoption("--browser")
+    parser.addoption("--env")
 
 
 @pytest.fixture()
 def browser(request):
     return request.config.getoption("--browser")
+
+
+@pytest.fixture()
+def env(request):
+    return request.config.getoption("--env")
 
 
 ############## PyTest HTML Report #################

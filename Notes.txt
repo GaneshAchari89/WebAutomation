@@ -16,4 +16,6 @@ pytest -v -s test_login.py --browser=chrome --html=/Users/ganeshachari/Automatio
 * To run particular group of test cases(Ex:Sanity)
 pytest -v -s -m 'sanity' -n=3 --browser=chrome --html=/Users/ganeshachari/AutomationWork/UI/reports/report.html --capture=tee-sys
 
+* To run test cases with environment
+pytest -v -s test_login.py --browser=chrome --env=staging
 

@@ -23,4 +23,20 @@ class ReadConfig:
     def getEmail():
         return config.get('common info', 'search_email')
 
+    @staticmethod
+    def getBaseUrlStaging():
+        return config.get('common info', 'baseUrl_staging')
+
+    @staticmethod
+    def getUsernameStaging():
+        return config.get('common info', 'username_staging')
+
+    @staticmethod
+    def getPasswordStaging():
+        return config.get('common info', 'password_staging')
+
+    @staticmethod
+    def getEmailStaging():
+        return config.get('common info', 'search_email_staging')
+
 

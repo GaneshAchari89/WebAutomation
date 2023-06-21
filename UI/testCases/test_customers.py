@@ -12,22 +12,27 @@ class Test_0002_Customers(CommonElements):
     def test_customers_search(self, setUp):
         self.logger.info("**************** Test_0002_Customers ****************")
         self.logger.info("**************** Verifying Customer Search Test ****************")
-        self.driver = setUp
-        self.driver.get(self.baseUrl)
-        self.driver.maximize_window()
-
-        self.loginPage = LoginPage(self.driver)
-        self.loginPage.setUserName(self.username)
-        self.loginPage.setPassword(self.password)
+        self.driver = setUp[0]
+        if setUp[1] == "staging":
+            self.driver.get(self.baseUrl_staging)
+            self.driver.maximize_window()
+            self.loginPage = LoginPage(self.driver)
+            self.loginPage.setUserName(self.username_staging)
+            self.loginPage.setPassword(self.password_staging)
+        elif setUp[1] == "production":
+            self.driver.get(self.baseUrl)
+            self.driver.maximize_window()
+            self.loginPage = LoginPage(self.driver)
+            self.loginPage.setUserName(self.username)
+            self.loginPage.setPassword(self.password)
         self.loginPage.clickLogin()
-
         self.customer = CustomersPage(self.driver)
         self.customer.navigate_to_customers()
-        self.customer.search_email(self.search_email)
+        self.customer.search_email(self.search_email_staging)
         self.customer.click_search()
 
         actual_search_result = self.customer.validate_search_result()
-        if actual_search_result == self.search_email:
+        if actual_search_result == self.search_email_staging:
             assert True
             self.logger.info("**************** Customer search test case is passed ****************")
             self.driver.close()

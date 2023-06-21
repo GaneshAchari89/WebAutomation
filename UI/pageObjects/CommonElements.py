@@ -8,10 +8,14 @@ class CommonElements:
     baseUrl = ReadConfig.getBaseUrl()
     username = ReadConfig.getUsername()
     password = ReadConfig.getPassword()
-
-    logger = LogGenerator.generateLogger()
     search_email = ReadConfig.getEmail()
 
+    baseUrl_staging = ReadConfig.getBaseUrlStaging()
+    username_staging = ReadConfig.getUsernameStaging()
+    password_staging = ReadConfig.getPasswordStaging()
+    search_email_staging = ReadConfig.getEmailStaging()
+
+    logger = LogGenerator.generateLogger()
     screen_shots_path = "../screenshots/"
 
     def save_screenshot(self):
