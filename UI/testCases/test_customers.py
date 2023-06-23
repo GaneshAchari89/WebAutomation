@@ -12,20 +12,9 @@ class Test_0002_Customers(CommonElements):
     def test_customers_search(self, setUp):
         self.logger.info("**************** Test_0002_Customers ****************")
         self.logger.info("**************** Verifying Customer Search Test ****************")
-        self.driver = setUp[0]
-        if setUp[1] == "staging":
-            self.driver.get(self.baseUrl_staging)
-            self.driver.maximize_window()
-            self.loginPage = LoginPage(self.driver)
-            self.loginPage.setUserName(self.username_staging)
-            self.loginPage.setPassword(self.password_staging)
-        elif setUp[1] == "production":
-            self.driver.get(self.baseUrl)
-            self.driver.maximize_window()
-            self.loginPage = LoginPage(self.driver)
-            self.loginPage.setUserName(self.username)
-            self.loginPage.setPassword(self.password)
-        self.loginPage.clickLogin()
+        self.setup = setUp
+        self.launch_url(self.setup)
+        self.driver = self.login_application(self.setup)
         self.customer = CustomersPage(self.driver)
         self.customer.navigate_to_customers()
         self.customer.search_email(self.search_email_staging)

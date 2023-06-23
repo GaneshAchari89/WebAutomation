@@ -13,14 +13,8 @@ class Test_0002_ddt_Login(CommonElements):
     def test_login_ddt(self, setUp):
         self.logger.info("**************** Test_0002_ddt_Login ****************")
         self.logger.info("**************** Verifying Login Test ****************")
-        self.driver = setUp[0]
-        if setUp[1] == "staging":
-            self.driver.get(self.baseUrl_staging)
-        elif setUp[1] == "production":
-            self.driver.get(self.baseUrl)
-        else:
-            self.logger.error("Please provide valid environment")
-        self.driver.maximize_window()
+        self.setup = setUp
+        self.driver = self.launch_url(self.setup)
         self.loginPage = LoginPage(self.driver)
 
         self.rows = excelUtil.getRowCount(self.path, 'Sheet1')

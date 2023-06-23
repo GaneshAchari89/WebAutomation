@@ -1,3 +1,4 @@
+#Test_0002_Customers--->test_customers_search
 link_main_customers_xpath : "//div[@class='os-content']//ul[contains(@class,nav-sidebar)]//i[contains(@class,'user')]//following-sibling::p[contains(text(),'Customers')]"
 link_sub_customers_xpath : "//div[@class='os-content']//ul[contains(@class,nav-sidebar)]//a[contains(@href,'List')]//following-sibling::p[contains(text(),'Customers')]"
 text_search_email_xpath : "//input[@id='SearchEmail']"
