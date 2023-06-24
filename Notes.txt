@@ -19,3 +19,12 @@ pytest -v -s -m 'sanity' -n=3 --browser=chrome --html=/Users/ganeshachari/Automa
 * To run test cases with environment
 pytest -v -s test_login.py --browser=chrome --env=staging
 
+* To run failed cases:
+  first execute the command with usual command:
+  pytest -v -s test_login.py --browser=chrome --env=staging
+  Then execute following command:
+  pytest --lf   (--last-failed – to only re-run the failures.)
+  pytest --ff   (--failed-first – to run the failures first and then the rest of the tests.)
+  (Note: Need to give browser or env also if you are using in framework)
+
+
