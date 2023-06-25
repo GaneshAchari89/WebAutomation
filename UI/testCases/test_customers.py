@@ -5,12 +5,12 @@ from UI.pageObjects.LoginPage import LoginPage
 from UI.pageObjects.CustomersPage import CustomersPage
 
 
-class Test_0002_Customers(CommonElements):
+class Test_0005_Customers(CommonElements):
 
     @pytest.mark.smoke
     @pytest.mark.regression
     def test_customers_search(self, setUp):
-        self.logger.info("**************** Test_0002_Customers ****************")
+        self.logger.info("**************** Test_0005_Customers ****************")
         self.logger.info("**************** Verifying Customer Search Test ****************")
         self.setup = setUp
         self.launch_url(self.setup)

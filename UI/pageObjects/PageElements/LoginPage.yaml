@@ -1,5 +1,6 @@
-#Test_0001_Login--->test_login
-#Test_0002_ddt_Login --->test_login_ddt
+#Test_0002_Login ---> test_login
+#Test_0003_ddt_Login ---> test_login_ddt
+#Test_0004_ddt_login_parameterize --->  test_login_ddt_parameterize
 textbox_username_xpath : //input[@type='email']
 textbox_password_xpath : //input[@type='password']
 button_login_xpath : //button[@type='submit' and text()='Log in']

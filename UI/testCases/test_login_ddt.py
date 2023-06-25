@@ -6,12 +6,12 @@ from UI.pageObjects.LoginPage import LoginPage
 from UI.utilities import excelUtil
 
 
-class Test_0002_ddt_Login(CommonElements):
+class Test_0003_ddt_Login(CommonElements):
     path = "../testData/LoginData.xlsx"
 
     @pytest.mark.smoke
     def test_login_ddt(self, setUp):
-        self.logger.info("**************** Test_0002_ddt_Login ****************")
+        self.logger.info("**************** Test_0003_ddt_Login ****************")
         self.logger.info("**************** Verifying Login Test ****************")
         self.setup = setUp
         self.driver = self.launch_url(self.setup)
