@@ -16,7 +16,7 @@ class Test_0006_Login_Customers(CommonElements):
         self.launch_url(self.setup)
         self.driver = self.login_application(self.setup)
         actual_title = self.driver.title
-        if actual_title == 'Dashboard / nopCommerce administrationnnnnn':
+        if actual_title == 'Dashboard / nopCommerce administration':
             assert True
             self.logger.info("**************** Login test case is passed ****************")
             self.driver.close()
