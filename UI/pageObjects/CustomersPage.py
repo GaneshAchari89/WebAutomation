@@ -16,4 +16,10 @@ class CustomersPage(CommonOperations):
         self.wait_and_click("button_search_xpath")
 
     def validate_search_result(self):
-        self.get_text("text_search_result_email_xpath")
+        return self.get_text("text_search_result_email_xpath")
+
+    def validate_add_new_button(self):
+        if self.driver.find_element(By.XPATH,self.element.get('button_add_xpath')):
+            return True
+        else:
+            return False

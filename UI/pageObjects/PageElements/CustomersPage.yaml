@@ -1,6 +1,9 @@
 #Test_0005_Customers--->test_customers_search
-link_main_customers_xpath : "//div[@class='os-content']//ul[contains(@class,nav-sidebar)]//i[contains(@class,'user')]//following-sibling::p[contains(text(),'Customers')]"
-link_sub_customers_xpath : "//div[@class='os-content']//ul[contains(@class,nav-sidebar)]//a[contains(@href,'List')]//following-sibling::p[contains(text(),'Customers')]"
-text_search_email_xpath : "//input[@id='SearchEmail']"
-button_search_xpath : "//button[@id='search-customers']"
-text_search_result_email_xpath : "//table[@id='customers-grid']//tr[@class='odd']//td[2]"
+link_main_customers_xpath : //div[@class='os-content']//ul[contains(@class,nav-sidebar)]//i[contains(@class,'user')]//following-sibling::p[contains(text(),'Customers')]
+link_sub_customers_xpath : //div[@class='os-content']//ul[contains(@class,nav-sidebar)]//a[contains(@href,'List')]//following-sibling::p[contains(text(),'Customers')]
+text_search_email_xpath : //input[@id='SearchEmail']
+button_search_xpath : //button[@id='search-customers']
+text_search_result_email_xpath : //table[@id='customers-grid']//tr[@class='odd']//td[2]
+
+#Test_0006_Login_Customers --->test_customers_add
+button_add_xpath : //a[contains(@class,'btn-primary')]
