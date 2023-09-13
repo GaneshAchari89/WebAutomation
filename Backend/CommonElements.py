@@ -1,15 +1,21 @@
+import json
 import os
 
 from Backend.utilities.readProperties import ReadConfig
 from Backend.utilities.customLogger import LogGenerator
+from jsonschema import validate
 
 
 class CommonElements():
     baseUrl = ReadConfig.getBaseUrl()
-
     logger = LogGenerator.generateLogger()
-    screen_shots_path = "../Backend/screenshots/"
 
-    def save_screenshot(self):
-        self.driver.save_screenshot(
-            self.screen_shots_path + os.environ.get('PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0] + ".png")
+    users_schema = ReadConfig.getUsersSchema()
+
+    @staticmethod
+    def validate_schema(response):
+        with open(CommonElements.users_schema, 'r') as f:
+            schema = json.load(f)
+        return validate(instance=response, schema=schema)
+
+

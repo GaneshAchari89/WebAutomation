@@ -11,6 +11,10 @@ class ReadConfig:
     def getBaseUrl():
         return config.get('common info', 'baseUrl')
 
+    @staticmethod
+    def getUsersSchema():
+        return config.get('schema', 'users_schema')
+
 
 
 
