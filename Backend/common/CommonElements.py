@@ -1,6 +1,4 @@
 import json
-import os
-
 from Backend.utilities.readProperties import ReadConfig
 from Backend.utilities.customLogger import LogGenerator
 from jsonschema import validate

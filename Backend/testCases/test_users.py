@@ -1,8 +1,7 @@
-from Backend.CommonElements import CommonElements
-from Backend.baseClass import BaseClass
+from Backend.common.CommonElements import CommonElements
+from Backend.common.baseClass import BaseClass
 
-from jsonschema import validate
-import json
+from Backend.validateResponse.validate_test_users import ValidateResponse
 
 
 class Test_Users(CommonElements):
@@ -15,6 +14,7 @@ class Test_Users(CommonElements):
             self.logger.info("**************** Validating json schema ****************")
             if CommonElements.validate_schema(json_response) is None:
                 self.logger.info("**************** Json schema is matching ****************")
+                ValidateResponse.validate_response(json_response)
                 assert True
             else:
                 self.logger.info("**************** Json schema is not matching ****************")

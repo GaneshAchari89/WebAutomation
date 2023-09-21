@@ -1,7 +1,8 @@
 import configparser
 
 config = configparser.RawConfigParser()
-config_path = "../Backend/configuration/config.ini"
+# config_path = "../Backend/configuration/config.ini"
+config_path = "/Users/ganeshachari/Desktop/WebAutomation/Backend/configuration/config.ini"
 config.read(config_path)
 
 
