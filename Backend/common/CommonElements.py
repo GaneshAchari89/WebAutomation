@@ -9,6 +9,7 @@ class CommonElements():
     logger = LogGenerator.generateLogger()
 
     users_schema = ReadConfig.getUsersSchema()
+    users_test_data = ReadConfig.getUserData()
 
     @staticmethod
     def validate_schema(response):

@@ -15,6 +15,10 @@ class ReadConfig:
     def getUsersSchema():
         return config.get('schema', 'users_schema')
 
+    @staticmethod
+    def getUserData():
+        return config.get('test data', 'users_data')
+
 
 
 
